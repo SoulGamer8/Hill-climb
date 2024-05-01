@@ -1,17 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-namespace HillClimb.Car{
-    public class CarMoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler{
+namespace HillClimb.Car
+{
+    public class CarBreakButton : MonoBehaviour,IPointerDownHandler, IPointerUpHandler{
         [SerializeField] private CarDrivingController _carDrivingController;
 
         public void OnPointerDown(PointerEventData eventData) {
-            _carDrivingController.StartMove();
+            _carDrivingController.Break();
         }
 
         public void OnPointerUp(PointerEventData eventData) {
-            _carDrivingController.StopMove();
+            _carDrivingController.StopBreak();
         }
     }
 }
