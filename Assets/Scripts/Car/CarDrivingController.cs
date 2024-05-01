@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 namespace HillClimb.Car{
     [RequireComponent(typeof(Rigidbody2D))]
     public class CarDrivingController : MonoBehaviour{
-        [SerializeField] private Rigidbody2D _frontTierRB;
-        [SerializeField] private Rigidbody2D _backTierRB;
         private Rigidbody2D _carRB;
+        private FuelController _fuelManager;
 
         
         [Header("Setting Car")]
@@ -27,6 +24,7 @@ namespace HillClimb.Car{
 
         private void Awake() {
             _carRB = GetComponent<Rigidbody2D>();
+            _fuelManager = GetComponent<FuelController>();
         }
 
         private void FixedUpdate() {
@@ -34,17 +32,19 @@ namespace HillClimb.Car{
                 RaiseSpeed();
             else
                 LowerSpeed();
-                
+
             _carRB.velocity = new Vector2(_speed, _carRB.velocity.y);
         }
 
         #region Move
         public void StartMove(){
             _isMove = true;
+            _fuelManager.StartMove();
         }
 
         public void StopMove(){
             _isMove = false;
+            _fuelManager.StopMove();
         }
 
         private void RaiseSpeed(){
@@ -56,6 +56,7 @@ namespace HillClimb.Car{
         #region  Break
         public void Break(){
             _isBreak = true;
+            _fuelManager.StopMove();
         }
 
         public void StopBreak(){

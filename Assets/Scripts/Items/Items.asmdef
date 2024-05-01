@@ -1,8 +1,8 @@
 {
-    "name": "Car",
-    "rootNamespace": "HillClimb.Car",
+    "name": "Items",
+    "rootNamespace": "HillClimb.Items",
     "references": [
-        "GUID:ff121681b0274f6468209953bb22207a"
+        "Car"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

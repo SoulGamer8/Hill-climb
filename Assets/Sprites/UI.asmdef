@@ -1,9 +1,7 @@
 {
-    "name": "Car",
-    "rootNamespace": "HillClimb.Car",
-    "references": [
-        "GUID:ff121681b0274f6468209953bb22207a"
-    ],
+    "name": "UI",
+    "rootNamespace": "HillClimb.UI",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

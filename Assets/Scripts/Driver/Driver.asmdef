@@ -1,6 +1,6 @@
 {
-    "name": "Car",
-    "rootNamespace": "HillClimb.Car",
+    "name": "Driver",
+    "rootNamespace": "HillClimb.Driver",
     "references": [
         "GUID:ff121681b0274f6468209953bb22207a"
     ],
