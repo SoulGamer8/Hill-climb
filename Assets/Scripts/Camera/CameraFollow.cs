@@ -16,7 +16,8 @@ namespace HillClimb.Car
         }   
 
 
-        void FixedUpdate(){
+        private void Update() {
+            
             transform.position = new Vector3(_carTarget.position.x, transform.position.y, transform.position.z);
         }
     }
